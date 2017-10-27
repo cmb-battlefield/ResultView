@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+body { text-align:center; font-family: 'Open Sans'; background-image: url("bg_b.png"); background-size: contain; background-position: bottom; background-repeat: no-repeat; }
+.gold-rank { position:relative; display:inline-block; width:160px; height:160px; margin:30px; border:15px solid #d4af37; border-radius:150px; text-align:center;  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), inset 0 3px 5px rgba(247,205,69,.45); box-sizing:border-box; border-bottom-color:#fff; color:#d4af37; }
+.silver-rank { position:relative; display:inline-block; width:160px; height:160px; margin:30px; border:15px solid #C0C0C0; border-radius:150px; text-align:center;  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), inset 0 3px 5px rgba(204,204,204,.45); box-sizing:border-box; border-bottom-color:#fff; color:#C0C0C0; }
+.bronze-rank { position:relative; display:inline-block; width:160px; height:160px; margin:30px; border:15px solid #b25e49; border-radius:150px; text-align:center;  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), inset 0 3px 5px rgba(188,128,113,.45); box-sizing:border-box; border-bottom-color:#fff; color:#b25e49; }
+.ui-widget .ui-value { position:absolute; left:0; right:0; top:5px; font-size:35px; }
+.ui-widget .ui-value2 { position:absolute; left:0; right:0; top:60px; font-size:12px; text-transform:uppercase; font-weight:300}
+.ui-widget .ui-label { position:absolute; left:0; bottom:-10px; width:100%; font-size:20px; text-transform:uppercase; font-weight:700 }
+.logo-codeKombat { content:url("Logo_B.png"); float: right;}
+
+.purpleHorizon {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: auto;
+}
+.purpleHorizon caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+.purpleHorizon tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+.purpleHorizon th ,
+.purpleHorizon td {
+  padding-left: .625em;
+  padding-right: .625em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  text-align: center;
+}
+.purpleHorizon th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #873e8d;
+  color: #ffffff;
+}
+@media screen and (max-width: 600px) {
+  .purpleHorizon {
+    border: 0;
+  }
+  .purpleHorizon caption {
+    font-size: 1.3em;
+  }
+  .purpleHorizon thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .purpleHorizon tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  .purpleHorizon td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  .purpleHorizon td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .purpleHorizon td:last-child {
+    border-bottom: 0;
+  }
+}

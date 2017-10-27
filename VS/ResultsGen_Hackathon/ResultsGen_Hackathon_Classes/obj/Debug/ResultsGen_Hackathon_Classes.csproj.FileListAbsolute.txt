@@ -1,0 +1,5 @@
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_Hackathon_Classes\bin\Debug\ResultsGen_Hackathon_Classes.dll
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_Hackathon_Classes\bin\Debug\ResultsGen_Hackathon_Classes.pdb
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_Hackathon_Classes\obj\Debug\ResultsGen_Hackathon_Classes.dll
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_Hackathon_Classes\obj\Debug\ResultsGen_Hackathon_Classes.pdb
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_Hackathon_Classes\obj\Debug\ResultsGen_Hackathon_Classes.csprojResolveAssemblyReference.cache

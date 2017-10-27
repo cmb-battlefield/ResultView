@@ -1,0 +1,150 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style_b.css">
+  <script>
+    // Check for the various File API support.
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+	  // Great success! All the File APIs are supported.
+	} else {
+	  alert('The File APIs are not fully supported in this browser.');
+	}
+</script>
+</head>
+<body>
+  <center>
+    <div style="align-content: center;">
+      <table width="67.5%" cellpadding="0" cellspacing="0" style="align:center">
+        <tr style="height:20%;">
+          <td width="70%">
+            <!--<p style="font-size:35px; font-weight:800;">IFS 20<sup style="font-size:15px;">TH</sup> ANNIVERSARY HACKATHON </p>-->
+            <p style="font-size:50px; letter-spacing:.2em;" id="titleText">RESULTS</p>
+            <!--<div style="height:20px;"><h1 class="ifs-title1" style="float:left;">IFS 20<sup style="font-size:15px;">TH</sup> ANNIVERSARY HACKATHON </h1></div>-->
+          </td>
+          <td width="30%">
+            <div>
+              <img class="logo-codeKombat" width="250px"/>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+  <div style="display:inline-block;align:center;">
+  <!--
+    <div id="rankGraph" style="visibility:hidden;width">
+      <div class="ui-widget gold-rank">
+        <h1 class="ui-value" id="rank1Score">2000</h1>
+        <h1 class="ui-value2" id="rank1Team">TEAM 1</h1>
+        <span class="ui-label">RANK 1</span>
+      </div>
+      <div class="ui-widget silver-rank">
+        <h1 class="ui-value"  id="rank2Score">1750</h1>
+        <h1 class="ui-value2" id="rank2Team">TEAM 2</h1>
+        <span class="ui-label">RANK 2</span>
+      </div>
+      <div class="ui-widget bronze-rank">
+        <h1 class="ui-value" id="rank3Score">1000</h1>
+        <h1 class="ui-value2" id="rank3Team">TEAM 3</h1> 
+        <span class="ui-label">RANK 3</span>
+      </div>
+    </div>
+	-->
+	<div id="rankGraph" style="visibility:hidden;width">
+      <div class="ui-widget gold-rank">
+        <h1 class="ui-value" id="rank1Team">TEAM 1</h1>
+        <h1 class="ui-value2" id="rank1Score">2000</h1>
+        <span class="ui-label">RANK 1</span>
+      </div>
+      <div class="ui-widget silver-rank">
+        <h1 class="ui-value" id="rank2Team">TEAM 2</h1>
+        <h1 class="ui-value2"  id="rank2Score">1750</h1>
+        <span class="ui-label">RANK 2</span>
+      </div>
+      <div class="ui-widget bronze-rank">
+        <h1 class="ui-value" id="rank3Team">TEAM 3</h1> 
+        <h1 class="ui-value2" id="rank3Score">1000</h1>
+        <span class="ui-label">RANK 3</span>
+      </div>
+    </div>
+	
+    <div>
+      <output id="list"></output>
+      <table id="outputTable" class="purpleHorizon"></table>
+    </div>
+    <input type="file" id="files" name="files[]" multiple />
+  </div>
+<script>
+var table = document.getElementById('outputTable');
+function parseCSV(text, lineTerminator, cellTerminator) {
+  //break the lines apart
+  var lines = text.split(lineTerminator);
+  for(var j = 0; j<lines.length; j++){
+    if(lines[j] != ""){
+      if (j <= 1 ){
+        //create a table row
+        var tableRow = table.appendChild(document.createElement('tr'));
+        //split the rows at the cellTerminator character
+        var information = lines[j].split(cellTerminator);
+        for(var k = 0; k < information.length; k++){
+          //append the cell to the row
+          var cell = tableRow.appendChild(document.createElement('th'));
+          //first 2 rows comprise of the headings
+          if (j == 0){
+            cell.id = "cellMainHeader";
+            document.getElementById('titleText').innerHTML = information[k].toUpperCase();
+          }
+          if (j == 1){
+            document.getElementById('cellMainHeader').colSpan = information.length;
+          }
+          cell.appendChild(document.createTextNode(information[k]));
+        }
+      }
+      else{
+        //create a table row
+        var tableRow = table.appendChild(document.createElement('tr'));
+        //split the rows at the cellTerminator character
+        var information = lines[j].split(cellTerminator);
+        for(var k = 0; k < information.length; k++){
+          //append the cell to the row
+          var cell = tableRow.appendChild(document.createElement('td'));
+          if (k == 1){
+            cell.setAttribute("style", "text-align: left;")
+          }
+          if (j <= 4){
+            if(k == 1){
+              document.getElementById('rank'+(j-1)+'Team').innerHTML = information[k];
+            }
+            if(k == 2){
+              document.getElementById('rank'+(j-1)+'Score').innerHTML  = information[k].split(' ')[0];
+            }
+          }
+          cell.appendChild(document.createTextNode(information[k]));
+        }
+      }
+    }
+  }
+}
+
+function handleFileSelect(evt) {
+  var files = evt.target.files; // FileList object
+  // Loop through the FileList and populate the 'outputTable' with the data
+  for (var i = 0, f; f = files[i]; i++) {
+    var reader = new FileReader();
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        //call the parse function with the proper line terminator and cell terminator
+        parseCSV(e.target.result, '\n', ',');
+      };
+    })(f);
+    // Read the file as text
+    reader.readAsText(f);
+    document.getElementById('files').style.visibility = "collapse";
+    document.getElementById('rankGraph').style.visibility = "visible";
+  }
+}
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+
+</body>
+</html>

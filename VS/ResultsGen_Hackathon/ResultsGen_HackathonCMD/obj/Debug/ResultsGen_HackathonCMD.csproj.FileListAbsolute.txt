@@ -1,0 +1,8 @@
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\obj\Debug\ResultsGen_HackathonCMD.csprojResolveAssemblyReference.cache
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\bin\Debug\ResultsGen_HackathonCMD.exe.config
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\bin\Debug\ResultsGen_HackathonCMD.exe
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\bin\Debug\ResultsGen_HackathonCMD.pdb
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\obj\Debug\ResultsGen_HackathonCMD.exe
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\obj\Debug\ResultsGen_HackathonCMD.pdb
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\bin\Debug\ResultsGen_Hackathon_Classes.dll
+D:\Kombat\VS\ResultsGen_Hackathon\ResultsGen_HackathonCMD\bin\Debug\ResultsGen_Hackathon_Classes.pdb
