@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style_b2.css">
+  <link rel="stylesheet" type="text/css" href="style_b.css">
   <script>
     // Check for the various File API support.
 	if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -30,48 +30,43 @@
     </div>
   </center>
   <div style="display:inline-block;align:center;">
-  
+  <!--
     <div id="rankGraph" style="visibility:hidden;width">
-	  
       <div class="ui-widget gold-rank">
-	    <span class="ui-labelTop" id="rank1TeamLarge">RANK 3</span>
         <h1 class="ui-value" id="rank1Score">2000</h1>
         <h1 class="ui-value2" id="rank1Team">TEAM 1</h1>
         <span class="ui-label">RANK 1</span>
       </div>
       <div class="ui-widget silver-rank">
-	    <span class="ui-labelTop" id="rank2TeamLarge">RANK 3</span>
         <h1 class="ui-value"  id="rank2Score">1750</h1>
         <h1 class="ui-value2" id="rank2Team">TEAM 2</h1>
         <span class="ui-label">RANK 2</span>
       </div>
       <div class="ui-widget bronze-rank">
-	    <span class="ui-labelTop" id="rank3TeamLarge">RANK 3</span>
         <h1 class="ui-value" id="rank3Score">1000</h1>
         <h1 class="ui-value2" id="rank3Team">TEAM 3</h1> 
         <span class="ui-label">RANK 3</span>
       </div>
     </div>
-	
-	<!--
+	-->
 	<div id="rankGraph" style="visibility:hidden;width">
       <div class="ui-widget gold-rank">
         <h1 class="ui-value" id="rank1Team">TEAM 1</h1>
-        <h1 class="ui-value" id="rank1Score">2000</h1>
+        <h1 class="ui-value2" id="rank1Score">2000</h1>
         <span class="ui-label">RANK 1</span>
       </div>
       <div class="ui-widget silver-rank">
-         <h1 class="ui-value" id="rank2Team">TEAM 2</h1>
-        <h1 class="ui-value"  id="rank2Score">1750</h1>
+        <h1 class="ui-value" id="rank2Team">TEAM 2</h1>
+        <h1 class="ui-value2"  id="rank2Score">1750</h1>
         <span class="ui-label">RANK 2</span>
       </div>
       <div class="ui-widget bronze-rank">
-         <h1 class="ui-value" id="rank3Team">TEAM 3</h1>
-        <h1 class="ui-value" id="rank3Score">1000</h1>
+        <h1 class="ui-value" id="rank3Team">TEAM 3</h1> 
+        <h1 class="ui-value2" id="rank3Score">1000</h1>
         <span class="ui-label">RANK 3</span>
       </div>
     </div>
-	-->
+	
     <div>
       <output id="list"></output>
       <table id="outputTable" class="purpleHorizon"></table>
@@ -118,7 +113,6 @@ function parseCSV(text, lineTerminator, cellTerminator) {
           if (j <= 4){
             if(k == 1){
               document.getElementById('rank'+(j-1)+'Team').innerHTML = information[k];
-			  document.getElementById('rank'+(j-1)+'TeamLarge').innerHTML = information[k];
             }
             if(k == 2){
               document.getElementById('rank'+(j-1)+'Score').innerHTML  = information[k].split(' ')[0];
